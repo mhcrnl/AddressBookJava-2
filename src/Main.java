@@ -4,11 +4,10 @@ public class Main
 	public static void main()
 	{
 		Persoana a;
-		a("Nume", "Prenume", "Email", "Phone");
 		String x;
 		System.out.println("Se citeste o persoana:");
-		Scanner user_input = new Scanner(System.in);
+		Scanner user_input = new Scanner(System.in); //"Resource leak: 'user_input' is never closed"
 		x=user_input.next();
-		a.setName(x);
+		a.setName(x); //"Local variable may not have been initialized"
 	}
 }
