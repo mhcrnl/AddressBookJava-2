@@ -16,7 +16,7 @@ public class Persoana
 		return this.Name;
 	}
 	
-	public String getSurName()
+	public String getSurname()
 	{
 		return this.Surname;
 	}

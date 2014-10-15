@@ -26,7 +26,11 @@ public class Main
 		x = user_input.next();
 		a.setPhone(x);
 		
-		System.out.println("Cum printez un string?");
+		System.out.println(a.getName());
+		System.out.println(a.getSurname());
+		System.out.println(a.getEmail());
+		System.out.println(a.getPhone());
+		
 		
 	}
 }
