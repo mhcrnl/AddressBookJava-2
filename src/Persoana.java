@@ -1,53 +1,45 @@
 
 public class Persoana 
 {
-	private String Name, Surname, Email, Phone;
+	private String[] Nume, Prenume, Telefon, Email;
 	
-	Persoana(String Name, String Surname, String Email, String Phone)
+	public void setNume(String[] Nume)
 	{
-		this.Name = Name;
-		this.Surname = Surname;
+		this.Nume = Nume;
+	}
+	
+	public String[] getNume()
+	{
+		return this.Nume;
+	}
+	
+	public void setPrenume(String[] Prenume)
+	{
+		this.Prenume = Prenume;
+	}
+	
+	public String[] getPrenume()
+	{
+		return this.Prenume;
+	}
+	
+	public void setTelefon(String[] Telefon)
+	{
+		this.Telefon = Telefon;
+	}
+	
+	public String[] getTelefon()
+	{
+		return this.Telefon;
+	}
+	
+	public void setEmail(String[] Email)
+	{
 		this.Email = Email;
-		this.Phone = Phone;
 	}
 	
-	public String getName()
-	{
-		return this.Name;
-	}
-	
-	public String getSurname()
-	{
-		return this.Surname;
-	}
-	
-	public String getEmail()
+	public String[] getEmail()
 	{
 		return this.Email;
-	}
-	
-	public String getPhone()
-	{
-		return this.Phone;
-	}
-	
-	public void setName(String Name)
-	{
-		this.Name = Name;
-	}
-	
-	public void setSurname(String Surname)
-	{
-		this.Surname = Surname;
-	}
-	
-	public void setEmail(String Email)
-	{
-		this.Email = Email;
-	}
-	
-	public void setPhone(String Phone)
-	{
-		this.Phone = Phone;
 	}
 }
