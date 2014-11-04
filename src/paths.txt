@@ -1,0 +1,4 @@
+src\Data\Proprietar.dat
+src\Data\Persoane.dat
+src\Data\Activitati.dat
+src\Data\Evenimente.dat

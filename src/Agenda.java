@@ -1,8 +1,6 @@
 import java.io.*;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
 
-public class Agenda 
+public class Agenda
 {
     private Proprietar user;
     private Persoana[] contacts;
@@ -10,85 +8,27 @@ public class Agenda
     private Activitate[] tasks;
     private Eveniment[] events;
     private String act, eve, per, pro;
-    
+
     public Agenda loadFromFile ()
     {
-        try 
-        {
-            DataInputStream fisier;
-            fisier = new DataInputStream(new FileInputStream("Agenda.dat"));
-            pro = fisier.readUTF();
-            per = fisier.readUTF();
-            act = fisier.readUTF();
-            eve = fisier.readUTF();
-            fisier.close();
-        } catch (Exception e)
-                {
-                    System.out.println(e.getMessage());
+        try {
+            BufferedReader br = new BufferedReader(new FileReader("./paths.txt"));
+            String line;
+
+            try {
+                while (( line = br.readLine() ) != null){
+                    System.out.println("This fucker, right here " + line);
                 }
-        
-        try 
-        {
-            DataInputStream fisier;
-            fisier = new DataInputStream(new FileInputStream(pro));
-            user.setUsername(fisier.readUTF());
-            user.setParola(fisier.readUTF());
-            user.setNume(fisier.readUTF());
-            user.setPrenume(fisier.readUTF());
-            user.setTelefon(fisier.readUTF());
-            user.setEmail(fisier.readUTF());
-        } catch (Exception e)
-                {
-                    System.out.println(e.getMessage());
-                }
-        
-        try 
-        {
-            DataInputStream fisier;
-            fisier = new DataInputStream(new FileInputStream(per));
-            while (fisier.) //gotta figure this out
-            {
-                contacts[NrContacte].setNume(fisier.readUTF());
-                contacts[NrContacte].setPrenume(fisier.readUTF());
-                contacts[NrContacte].setTelefon(fisier.readUTF());
-                contacts[NrContacte].setEmail(fisier.readUTF());
-                NrContacte++;
+            } catch (IOException e) {
+                System.out.println("Could not read from the config file!");
+                System.exit(2);
             }
-        } catch (Exception e)
-                {
-                    System.out.println(e.getMessage());
-                }
-        //Activitati
-        try 
-        {
-            DataInputStream fisier;
-            fisier = new DataInputStream(new FileInputStream(act));
-            user.setUsername(fisier.readUTF());
-            user.setParola(fisier.readUTF());
-            user.setNume(fisier.readUTF());
-            user.setPrenume(fisier.readUTF());
-            user.setTelefon(fisier.readUTF());
-            user.setEmail(fisier.readUTF());
-        } catch (Exception e)
-                {
-                    System.out.println(e.getMessage());
-                }
-        //Eveniment
-        try 
-        {
-            DataInputStream fisier;
-            fisier = new DataInputStream(new FileInputStream(eve));
-            user.setUsername(fisier.readUTF());
-            user.setParola(fisier.readUTF());
-            user.setNume(fisier.readUTF());
-            user.setPrenume(fisier.readUTF());
-            user.setTelefon(fisier.readUTF());
-            user.setEmail(fisier.readUTF());
-        } catch (Exception e)
-                {
-                    System.out.println(e.getMessage());
-                }
-        return this;        
+        } catch (FileNotFoundException e) {
+            System.out.println("Config file does not exists.");
+            System.exit(1);
+        }
+
+        return this;
     }
 
     public Proprietar getUser() {
