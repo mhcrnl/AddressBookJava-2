@@ -1,25 +1,25 @@
 
 public class Eveniment 
 {
-	private String[] Denumire, Locatie;
+	private String Denumire, Locatie;
 	private int Zi, Luna, An;
 	
-	public void setDenumire(String[] Denumire)
+	public void setDenumire(String Denumire)
 	{
 		this.Denumire = Denumire;
 	}
 	
-	public String[] getDenumire()
+	public String getDenumire()
 	{
 		return this.Denumire;
 	}
 	
-	public void setLocatie(String[] Locatie)
+	public void setLocatie(String Locatie)
 	{
 		this.Locatie = Locatie;
 	}
 	
-	public String[] getLocatie()
+	public String getLocatie()
 	{
 		return this.Locatie;
 	}
